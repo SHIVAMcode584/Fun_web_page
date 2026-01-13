@@ -1,0 +1,159 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #243b55);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #cffff3;
+      min-height: 100vh;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    header {
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #7fffd4;
+    }
+    .auth {
+      font-size: 0.9rem;
+      opacity: 0.95;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .auth span {
+      font-size: 1.2rem;
+    }
+    .hero {
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+    .search-box {
+      margin: 20px auto 35px;
+      max-width: 520px;
+      display: flex;
+      gap: 10px;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 28px;
+      border: none;
+      outline: none;
+    }
+    .search-box button {
+      padding: 12px 22px;
+      border-radius: 28px;
+      border: none;
+      background: #7fffd4;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .menu-grid {
+      padding: 30px 20px 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .menu-card {
+      background: rgba(255,255,255,0.06);
+      border: 2px solid rgba(127,255,212,0.45);
+      border-radius: 18px;
+      height: 170px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #7fffd4;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .menu-card:hover {
+      background: rgba(127,255,212,0.18);
+      transform: translateY(-6px);
+    }
+    footer {
+      text-align: center;
+      padding: 18px;
+      font-size: 1rem;
+      color: rgba(127, 255, 212, 0.6);
+      margin-top: 40px;
+      /* border-top:1px solid black;
+      box-shadow: 5px 5px 5px rgba(0,0,0,.2); */
+    }
+  @media (max-width: 768px) {
+      header h1 { font-size: 1.5rem; }
+      .search-box { max-width: 100%; padding: 0 10px; }
+      .menu-card { height: 150px; font-size: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      header { justify-content: center; gap: 10px; }
+      .auth { font-size: 0.85rem; }
+      .menu-grid { gap: 20px; }
+      .menu-card { height: 140px; }
+    }
+
+    /* Dowry Warning Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 32, 39, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      padding: 20px;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-content {
+      background: #203a43;
+      border: 2px solid #facc15;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+    .modal-overlay.active .modal-content { transform: translateY(0); }
+    .modal-title { color: #facc15; font-size: 1.5rem; margin-bottom: 15px; font-weight: 700; }
+    .modal-text { color: #cffff3; font-size: 1rem; margin-bottom: 25px; line-height: 1.6; }
+    .modal-btn {
+      background: #facc15; color: #003333; border: none; padding: 12px 30px;
+      font-size: 1rem; font-weight: 700; border-radius: 30px; cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .modal-btn:hover { transform: translateY(-2px); }
+
+    @media (max-width: 480px) {
+      .modal-content { width: 90%; padding: 20px; }
+      .modal-title { font-size: 1.2rem; }
+      .modal-text { font-size: 0.9rem; }
+    }
